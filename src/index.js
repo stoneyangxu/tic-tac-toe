@@ -27,6 +27,11 @@ class Board extends React.Component {
     handleClick(i) {
 
         const squires = [...this.state.squares]
+
+        if (calculateWinner(squires) || squires[i]) {
+            return;
+        }
+
         squires[i] = this.state.xIsNext ? 'X' : 'O'
 
         this.setState({
