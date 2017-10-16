@@ -10,14 +10,13 @@ function Square(props) {
     );
 }
 
-export default Square;
-
 class Board extends React.Component {
 
     constructor(props) {
         super(props)
         this.state = {
-            squares: Array(9).fill(null)
+            squares: Array(9).fill(null),
+            xIsNext: true
         }
     }
 
@@ -28,10 +27,11 @@ class Board extends React.Component {
     handleClick(i) {
 
         const squires = [...this.state.squares]
-        squires[i] = 'X'
+        squires[i] = this.state.xIsNext ? 'X' : 'O'
 
         this.setState({
-            squares: squires
+            squares: squires,
+            xIsNext: !this.state.xIsNext
         })
     }
 
