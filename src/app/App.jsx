@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from '../logo.svg';
 import './App.css';
 
-import ShoppingList from "./ShoppingList";
+import Game from './Game';
 
 class App extends Component {
   render() {
     return (
-      <ShoppingList />
+      <Game />
     );
   }
 }
